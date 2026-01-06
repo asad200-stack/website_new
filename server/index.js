@@ -37,6 +37,15 @@ app.use('/api/products', productsRoutes);
 app.use('/api/settings', settingsRoutes);
 app.use('/api/auth', authRoutes);
 
+// Basic health/root responses for API-only deploys
+app.get('/', (req, res) => {
+  res.json({ status: 'ok', message: 'API is running' });
+});
+
+app.get('/health', (req, res) => {
+  res.json({ status: 'healthy' });
+});
+
 // Serve static files in production when a built client exists
 const clientDistPath = path.join(__dirname, '../client/dist');
 if (process.env.NODE_ENV === 'production' && fs.existsSync(clientDistPath)) {
