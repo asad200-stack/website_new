@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>متجر إلكتروني - API</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: "Segoe UI", Arial, sans-serif;
+      background: linear-gradient(135deg, #4f46e5, #7c3aed);
+      color: #0f172a;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 32px;
+      max-width: 720px;
+      width: 90%;
+      box-shadow: 0 20px 60px rgba(15, 23, 42, 0.25);
+      text-align: right;
+    }
+    h1 {
+      margin: 0 0 12px;
+      color: #111827;
+    }
+    p {
+      margin: 0 0 12px;
+      line-height: 1.7;
+      color: #374151;
+    }
+    .muted {
+      color: #6b7280;
+      font-size: 14px;
+    }
+    .row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 16px;
+    }
+    .pill {
+      background: #eef2ff;
+      color: #4338ca;
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-weight: 600;
+      font-size: 14px;
+    }
+    .link {
+      color: #2563eb;
+      text-decoration: none;
+      font-weight: 700;
+    }
+    .link:hover { text-decoration: underline; }
+    .cta {
+      display: inline-block;
+      background: linear-gradient(135deg, #10b981, #059669);
+      color: #fff;
+      padding: 12px 20px;
+      border-radius: 12px;
+      text-decoration: none;
+      font-weight: 700;
+      margin-top: 16px;
+      box-shadow: 0 10px 30px rgba(16, 185, 129, 0.35);
+    }
+    .cta:hover { opacity: 0.92; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>واجهة الـ API تعمل 🚀</h1>
+    <p>هذا النشر يشغّل الـ Backend فقط. يمكن ربط واجهة أمامية لاحقاً أو استخدام هذه الـ API للتكامل.</p>
+    <div class="row">
+      <div class="pill">GET /</div>
+      <div class="pill">GET /health</div>
+      <div class="pill">/api/products</div>
+      <div class="pill">/api/settings</div>
+      <div class="pill">/api/auth</div>
+      <div class="pill">/uploads</div>
+    </div>
+    <p class="muted">لإضافة واجهة: أنشئ client وابنِه إلى client/dist أو أضف ملفات ثابتة هنا.</p>
+    <a class="cta" href="/health">فحص الصحة</a>
+  </div>
+</body>
+</html>
+

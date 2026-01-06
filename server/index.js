@@ -32,13 +32,24 @@ app.use('/uploads', express.static(uploadsDir));
 const productsRoutes = require('./routes/products');
 const settingsRoutes = require('./routes/settings');
 const authRoutes = require('./routes/auth');
+
+// Serve static public assets if available
+const publicDir = path.join(__dirname, 'public');
+if (fs.existsSync(publicDir)) {
+  app.use(express.static(publicDir));
+}
+
 // Routes
 app.use('/api/products', productsRoutes);
 app.use('/api/settings', settingsRoutes);
 app.use('/api/auth', authRoutes);
 
-// Basic health/root responses for API-only deploys
+// Basic health/root responses (serve landing if exists)
 app.get('/', (req, res) => {
+  const landing = path.join(publicDir, 'index.html');
+  if (fs.existsSync(landing)) {
+    return res.sendFile(landing);
+  }
   res.json({ status: 'ok', message: 'API is running' });
 });
 
